@@ -55,6 +55,32 @@ void RESTDialog::on_genURLButton_clicked()
         connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
         loop.exec();
 
+        // HTTP status code
+        // see https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+        // see https://waterservices.usgs.gov/rest/IV-Service.html#Error
+        int status = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        switch (status) {
+        case 200:
+            // ok
+            qDebug() << "200 OK";
+            break;
+        case 301:
+            // redirect (not considered an error)
+            qDebug() << "301 Moved Permanently";
+            break;
+        case 400:
+            // bad data
+            qDebug() << "400 Bad Request";
+            break;
+        case 404:
+            // invalid data
+            qDebug() << "404 Not Found";
+            break;
+        default:
+            qDebug() << status << " Unknown";
+            break;
+        }
+
         // check for errors
         if (reply->error() != 0) break;
 
