@@ -104,11 +104,6 @@
        </item>
        <item>
         <property name="text">
-         <string>USGS RDB Version 1.0</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
          <string>JSON</string>
         </property>
        </item>

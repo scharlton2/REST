@@ -29,5 +29,3 @@ SOURCES += main.cpp\
 HEADERS  += restdialog.h
 
 FORMS    += restdialog.ui
-
-CONFIG += c++11

@@ -21,15 +21,10 @@ public:
 
 private slots:
     void on_genURLButton_clicked();
-    void replyFinished(QNetworkReply*);
-    void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-    void error(QNetworkReply::NetworkError code);
-    void finished();
 
 private:
     Ui::RESTDialog *ui;
     QNetworkAccessManager *m_manager;
-    bool m_isWaitingHttpResponse;
 };
 
 #endif // RESTDIALOG_H
