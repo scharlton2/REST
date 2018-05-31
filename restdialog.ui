@@ -19,7 +19,7 @@
      <item>
       <widget class="QLabel" name="siteLabel">
        <property name="text">
-        <string>Site or Sites:</string>
+        <string>Site:</string>
        </property>
       </widget>
      </item>
@@ -94,6 +94,11 @@
       <widget class="QComboBox" name="formatComboBox">
        <item>
         <property name="text">
+         <string>Parsed WaterML-2.0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
          <string>WaterML-2.0</string>
         </property>
        </item>
@@ -146,7 +151,13 @@
     </layout>
    </item>
    <item>
-    <widget class="QPlainTextEdit" name="outputPlainTextEdit"/>
+    <widget class="QPlainTextEdit" name="outputPlainTextEdit">
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+      </font>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
